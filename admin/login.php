@@ -4,7 +4,7 @@ include 'includes/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
-    $password = md5($_POST['password']); // Sesuai isi database
+    $password = md5($_POST['password']);
 
     $stmt = $conn->prepare("SELECT * FROM admin WHERE username=? AND password=?");
     $stmt->bind_param("ss", $username, $password);
